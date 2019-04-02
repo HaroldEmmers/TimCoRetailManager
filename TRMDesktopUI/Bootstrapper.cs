@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using TRMDesktopUI.Helpers;
@@ -31,7 +29,8 @@ namespace TRMDesktopUI
 
 			_container
 				.Singleton<IWindowManager, WindowManager>()
-				.Singleton<IEventAggregator, EventAggregator>();
+				.Singleton<IEventAggregator, EventAggregator>()
+				.Singleton<IApiHelper, ApiHelper>();
 
 			GetType().Assembly.GetTypes()
 				.Where(type => type.IsClass)
